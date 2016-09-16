@@ -5,7 +5,7 @@ using Assignment1.IO;
 namespace Assignment1
 {
     /// <summary>
-    /// Bank individual Set
+    /// Person list
     /// 
     /// Among other things, this class includes an example of how to deserialize a whole list of bank individual objects from a file
     /// </summary>

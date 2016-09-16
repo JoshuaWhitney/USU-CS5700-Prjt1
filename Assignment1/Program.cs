@@ -5,6 +5,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Assignment1.IO;
 
+/*
+    Notes from class:
+    #1 concern: Properly implementing strategy pattern
+    #2 concern: Unit testing - need at least _some_
+
+
+
+*/
+
 namespace Assignment1
 {
     static class Program

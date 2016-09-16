@@ -24,7 +24,7 @@ namespace Assignment1
             OpenFileDialog dlg = new OpenFileDialog
             {
                 DefaultExt = "txt",
-                Filter = @"XML files (*.xml)|*.xml",
+                Filter = @"Database files (*.xml, *.json)|*.xml;*.json",
                 Multiselect = false
             };
             DialogResult result = dlg.ShowDialog();
@@ -50,25 +50,32 @@ namespace Assignment1
             ImportExporterStrategy storageStrategy = null;
             if (xmlFileType.Checked)
                 storageStrategy = new XmlImportExportStrategy();
-            else
+            else if (jsonFileType.Checked)
                 storageStrategy = new JsonImporterExporterStrategy();
+            else
+                MessageBox.Show(@"Please Select File Type");
 
-            var analyzer = new Analyzer()
-            {
-                StorageStrategy = storageStrategy,
-                InputFileName = inputFilename.Text,
-                InterestStrategy = CreateInterestStrategy(),
-                FeeStrategy = CreateFeeStrategy()
-            };
+            var processor = new Processor()
+                {
+                    StorageStrategy = storageStrategy,
+                    InputFileName = inputFilename.Text,
+                };
 
             // Run the analyzer
-            analyzer.Run();
+            processor.Run();
 
             // Display the result;
+            /*
             beginningBalance.Text = FormatToDollars(analyzer.BeginningTotal);
             endingBalance.Text = FormatToDollars(analyzer.EndingTotal);
             interestPaid.Text = FormatToDollars(analyzer.InterestPaid);
             feesCollected.Text = FormatToDollars(analyzer.FeesCollected);
+            */
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("Exiting");
         }
     }
 }
