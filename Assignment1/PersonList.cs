@@ -33,6 +33,17 @@ namespace Assignment1
                 StorageStrategy.Save(filename, _listOfPeople);
         }
 
+        public int GetSize()
+        {
+            return _listOfPeople.Count;
+        }
+
+        public List<Person> GetSublist(int index, int key)
+        {
+            List<Person> sub = _listOfPeople.GetRange(index, key);
+            return sub;
+        }
+
         public IEnumerator<Person> GetEnumerator()
         {
             return _listOfPeople.GetEnumerator();
