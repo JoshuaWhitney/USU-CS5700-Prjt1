@@ -53,6 +53,7 @@
     <Compile Include="IO\ImportExporterStrategy.cs" />
     <Compile Include="IO\JsonImporterExporterStrategy.cs" />
     <Compile Include="IO\XmlImportExportStrategy.cs" />
+    <Compile Include="Matcher.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Child.cs" />
     <Compile Include="PersonList.cs" />
