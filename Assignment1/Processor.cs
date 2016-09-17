@@ -5,7 +5,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace Assignment1
 {
-    class Processor
+    public class Processor
     {
         public ImportExporterStrategy StorageStrategy { get; set; }
         public string InputFileName { get; set; }
@@ -20,6 +20,7 @@ namespace Assignment1
             var matcher = new Matcher();
             //Begin to look for matches, iterate through all object in list
             //Console.WriteLine(personList.GetSize() + " - Number of objects");
+            Console.WriteLine("Matching pairs:");
             foreach (Person person1 in personList)
             {
 
@@ -31,14 +32,10 @@ namespace Assignment1
                     match += matcher.MatchMethod3(person1, person2);
 
                     if (match >= 1)
-                        Console.WriteLine("Match between Person #" + person1.ObjectId +" and  #" + person2.ObjectId);
-
-
+                        Console.WriteLine("\t(" + person1.ObjectId +"," + person2.ObjectId+")");
 
                     //Console.WriteLine("Compare Person #" + person1.ObjectId + " and Person #" + person2.ObjectId);
                 }
-                Console.WriteLine("");
-
                 index++;
 
                 /* Print contents of each object in personList

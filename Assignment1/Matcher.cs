@@ -121,15 +121,5 @@ namespace Assignment1
                 return 1;
             return 0;
         }
-
-        public int MatchMethod4(Person p1, Person p2)
-        {
-            return 0;
-        }
-
-        public int MatchMethod5(Person p1, Person p2)
-        {
-            return 0;
-        }
     }
 }
