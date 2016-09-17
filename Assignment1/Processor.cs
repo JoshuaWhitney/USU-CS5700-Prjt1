@@ -15,35 +15,14 @@ namespace Assignment1
 
         public void Run()
         {
-            BeginningTotal = 0;
-            EndingTotal = 0;
-            InterestPaid = 0;
-            FeesCollected = 0;
+
 
             // Create PersonList from file
             PersonList personList = new PersonList() { StorageStrategy = StorageStrategy };
             personList.Load(InputFileName);
-            /*
-            // Compute beginning balance
-            foreach (Person person in personList)
-                BeginningTotal += person.Balance;
 
-            // Foreach account compute fees and interest
-            foreach (Person person in personList)
-            {
-                int interest = InterestStrategy?.Calculate(person) ?? 0;
-                person.Balance += interest;
-                InterestPaid += interest;
+            //Begin to look for matches
 
-                int fee = FeeStrategy?.Calculate(person) ?? 0;
-                person.Balance -= fee;
-                FeesCollected += fee;
-            }
-
-            // Compute beginning balance
-            foreach (Person person in personList)
-                EndingTotal += person.Balance;
-            */
         }
     }
 }
